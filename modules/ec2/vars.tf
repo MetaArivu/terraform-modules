@@ -16,6 +16,6 @@ variable "AMI" {
 variable "instance_type" {
   default = "t2.micro"
 }
-variable "ariu_subnet_id" {
+variable "arivu_subnet_id" {
     default = "subnet-02757ece6403d3678"
     }
