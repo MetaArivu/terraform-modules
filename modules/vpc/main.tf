@@ -16,7 +16,7 @@ resource "aws_subnet" "aws-subnet-public-ariu" {
     vpc_id = "${var.vpc_id}"
     cidr_block = "${var.ariu_aws_subnet_cidr}"
     map_public_ip_on_launch = "true" //it makes this a public subnet
-    availability_zones       = ["${data.aws_availability_zones.available.names}"]
+    availability_zone       = ["${data.aws_availability_zones.available.names}"]
     tags = {
         Name = "aws-subnet-public-ariu"
     }
