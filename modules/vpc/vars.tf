@@ -1,14 +1,14 @@
-variable "ariu_aws_subnet_cidr" {
+variable "arivu_aws_subnet_cidr" {
    type = string
 }
-variable "ariu_aws_vpc_cidr" {
+variable "arivu_aws_vpc_cidr" {
   type = string
 }
-variable "ariu_tenancy" {
+variable "arivu_tenancy" {
   default = "default"
 
 }
-variable "ariu_aws_availability_zone" {
+variable "arivu_aws_availability_zone" {
  
    default = "us-east-2a"
 }
