@@ -1,3 +1,6 @@
+
+data "aws_availability_zones" "available" {}
+
 resource "aws_vpc" "aws-vpc-ariu" {
     cidr_block = "${var.ariu_aws_vpc_cidr}"
     enable_dns_support = "true" #gives you an internal domain name
@@ -13,7 +16,7 @@ resource "aws_subnet" "aws-subnet-public-ariu" {
     vpc_id = "${var.vpc_id}"
     cidr_block = "${var.ariu_aws_subnet_cidr}"
     map_public_ip_on_launch = "true" //it makes this a public subnet
-    availability_zone = "${var.ariu_aws_availability_zone}"
+    availability_zone       = "${data.aws_availability_zones.available.names[count.index]}"
     tags = {
         Name = "aws-subnet-public-ariu"
     }
