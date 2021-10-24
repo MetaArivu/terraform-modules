@@ -13,6 +13,7 @@ resource "aws_vpc" "aws-vpc-ariu" {
 }
 
 resource "aws_subnet" "aws-subnet-public-ariu" {
+    count                   = length(data.aws_availability_zones.all.names)
     vpc_id = "${var.vpc_id}"
     cidr_block = "${var.ariu_aws_subnet_cidr}"
     map_public_ip_on_launch = "true" //it makes this a public subnet
