@@ -7,7 +7,7 @@ resource "aws_vpc" "arivu-aws-vpc" {
     enable_classiclink = "false"
     instance_tenancy = "${var.arivu_tenancy}"    
     tags = {
-        Name = "aws-vpc-arivu"
+        Name = "arivu-aws-vpc"
 }
 }
 
@@ -22,7 +22,7 @@ resource "aws_subnet" "aws-subnet-public-arivu" {
 }
 
 output "vpc_id" {
-  value = "${aws_vpc.aws-vpc-arivu.id}"
+  value = "${aws_vpc.arivu-aws-vpc.id}"
 }
 
 output "subnet_id" {
