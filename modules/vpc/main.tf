@@ -17,7 +17,6 @@ resource "aws_subnet" "aws-subnet-public-ariu" {
     tags = {
         Name = "aws-subnet-public-ariu"
     }
-    subnet_id = "${var.subnet_id}"
 }
 
 output "vpc_id" {
