@@ -22,3 +22,7 @@ resource "aws_subnet" "aws-subnet-public-ariu" {
 output "vpc_id" {
   value = "${aws_vpc.aws-vpc-ariu.id}"
 }
+
+output "subnet_id" {
+  value = "${aws_subnet.aws-subnet-public-ariu.id}"
+}
