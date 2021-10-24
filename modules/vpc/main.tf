@@ -1,5 +1,4 @@
 
-data "aws_availability_zones" "all" {}
 
 resource "aws_vpc" "aws-vpc-ariu" {
     cidr_block = "${var.ariu_aws_vpc_cidr}"
@@ -13,11 +12,10 @@ resource "aws_vpc" "aws-vpc-ariu" {
 }
 
 resource "aws_subnet" "aws-subnet-public-ariu" {
-    count                   = length(data.aws_availability_zones.all.names)
     vpc_id = "${var.vpc_id}"
     cidr_block = "${var.ariu_aws_subnet_cidr}"
     map_public_ip_on_launch = "true" //it makes this a public subnet
-    availability_zone       = "${data.aws_availability_zones.all.names[count.index]}"
+    availability_zone = "${var.ariu_aws_availability_zone}"
     tags = {
         Name = "aws-subnet-public-ariu"
     }
