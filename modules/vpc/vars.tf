@@ -11,8 +11,3 @@ variable "ariu_tenancy" {
 variable "vpc_id" {}
 variable "subnet_id" {}
 
-
-variable "ariu_aws_availability_zone" {
- 
-   default = "us-east-2a"
-}
